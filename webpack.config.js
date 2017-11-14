@@ -16,6 +16,10 @@ module.exports={
       {
         test:/\.less$/,
         use:["style-loader","css-loader","less-loader"]
+      },
+      {
+        test:/\.(png|jpg|gif|bmp)$/,
+        use:'url-loader'
       }
     ]
   },
