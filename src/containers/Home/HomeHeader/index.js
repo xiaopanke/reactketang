@@ -9,15 +9,20 @@ export default class HomeHeader extends Component{
       isShow:false //是否显示菜单
     }
   }
-  render(){
-    let menulist=<CSSTransition timeout={500} classNames="fade">
-      <ul className="menu-list">
-        <li>node课程培训</li>
-        <li>html课程培训</li>
-        <li>视频课程培训</li>
-        <li>node课程培训</li>
+  getmenulist=() =>(
+    <CSSTransition timeout={500} classNames="fade">
+      <ul className="menu-list" onClick={(event)=>{
+        this.props.setLesson(event.target.dataset.id);
+        this.setState({isShow:false})
+      }}>
+        <li className={this.props.lesson=='1' ? 'active' : ''} data-id="1">node课程培训</li>
+        <li  className={this.props.lesson=='2' ? 'active' : ''} data-id="2">html课程培训</li>
+        <li  className={this.props.lesson=='3' ? 'active' : ''} data-id="3">视频课程培训</li>
+        <li  className={this.props.lesson=='4' ? 'active' : ''} data-id="4">node课程培训</li>
       </ul>
       </CSSTransition>
+  )
+  render(){
     return (
       <div className="homeheader">
         <div className="home-logo">
@@ -30,7 +35,7 @@ export default class HomeHeader extends Component{
         </div>
         <TransitionGroup>
         {
-          this.state.isShow ? menulist : null
+          this.state.isShow ? this.getmenulist() : null
         }
         </TransitionGroup>
       </div>

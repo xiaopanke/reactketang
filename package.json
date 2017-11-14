@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "private": true,
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --open"
@@ -19,7 +18,6 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "history": "^4.7.2",
-    "img-loader": "^2.0.0",
     "mongoose": "^4.12.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
