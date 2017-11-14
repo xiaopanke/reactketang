@@ -1,6 +1,7 @@
 # 启动项目
 ```
-
+https://github.com/xiaopanke/reactketang.git
+cd reactketang
 npm install
 cd server
 node server.js
