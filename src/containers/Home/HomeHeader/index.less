@@ -18,6 +18,8 @@
     div {
       i{
         color: #fff;
+        margin-right: 10px;
+        font-size: 20px;
       }
     }
   }
@@ -27,6 +29,7 @@
     left:0;
     top:56px;
     background: #000;
+    transition: all 1s;
     li{
       line-height: 45px;
       color:#fff;
@@ -36,4 +39,13 @@
     }
   }
 
+}
+
+.fade-enter{opacity: .1}
+.fade-enter.fade-enter-active{
+  opacity: 1;
+  transition:opacity 500ms;
+}
+.fade-exit.fade-exit-active{
+  opacity: 0
 }

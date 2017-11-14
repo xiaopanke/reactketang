@@ -126,3 +126,7 @@ module.exports = {
 2. Store 创建仓库的时候要提供 routerMiddleware
 3. reducer 增加 routerReducer
 4. action 跳转路径
+
+
+## 动画
+https://reactcommunity.org/react-transition-group/
