@@ -130,3 +130,6 @@ module.exports = {
 
 ## 动画
 https://reactcommunity.org/react-transition-group/
+
+## 轮播图
+https://github.com/voronianski/react-swipe
