@@ -2,7 +2,8 @@ const domain='http://localhost:3000'
 //后台的url地址是3000端口
 export function get(url) {
   //fetch 是promise的升级 是axjx的封装，比axjx好用，
-  //这里会返回一个promise，resolve之后就是轮播图数据 
+  //这里会返回一个promise，resolve之后就是轮播图数据
+  //浏览器原生支持fetch
   return  fetch(domain+url,{
     method:'GET',
     header:{
@@ -11,5 +12,8 @@ export function get(url) {
       //客户跨域请求服务器的要携带cookie
       "credential":"include"
     }
-  }).then((res) =>res.json())
+  }).then((res) =>{
+    console.log(23456);
+    return res.json()
+  })
 }

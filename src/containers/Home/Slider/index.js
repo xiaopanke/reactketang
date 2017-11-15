@@ -1,11 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import ReactSwipe from 'react-swipe';
+import './index.less'
 
 export default class Carousel extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      shownum:0 //是否显示菜单
+    }
+  }
     render() {
         let swipeoption={
-          auto: 3000
+          auto: 1000,
+          continuous:true,
+          callback:(index)=>{
+            console.log(1234567);
+              this.setState({
+                shownum:index
+              })
+          }
         }
         console.log(this.props);
         return (
@@ -19,7 +33,13 @@ export default class Carousel extends React.Component {
                     }
                 </ReactSwipe> : null
               }
-
+              <div className="dots">
+                {
+                  this.props.sliders.length >0 ? (this.props.sliders.map((item,index) => (
+                    <span key={index} className={index==this.state.shownum ? 'active' : ''}></span>
+                  ))) : null
+                }
+              </div>
             </div>
         );
     }

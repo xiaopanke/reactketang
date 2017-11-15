@@ -11,7 +11,7 @@ export default class Tab extends Component{
         </NavLink>
         <NavLink to="/courses">
           <i className="iconfont icon-react"></i>
-          <span>我的课程</span>
+          <span>我的美女</span>
         </NavLink>
         <NavLink to="/profile">
           <i className="iconfont icon-xiaolian"></i>

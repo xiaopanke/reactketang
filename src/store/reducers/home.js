@@ -5,7 +5,6 @@ let initState={
   lesson:0 ,//当前课程的ID
   sliders:[]
 }
-console.log(types.FEATCH_SLIDERS);
 export default function (state=initState,action) {
   switch (action.type) {
     case types.SEL_LESSON:

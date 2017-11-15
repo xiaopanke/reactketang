@@ -4,6 +4,7 @@ import HomeHeader from './HomeHeader/index';
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
 import Slider from './Slider/index'
+import LessonList from './LessonList/index'
 class Home extends Component{
   componentDidMount(){
     //获取store里的轮播图数据
@@ -16,6 +17,7 @@ class Home extends Component{
         <HomeHeader lesson={this.props.lesson} setLesson={this.props.setLesson} />
         <div className='main-content'>
           <Slider sliders={this.props.sliders} />
+          <LessonList />
         </div>
       </div>
     )

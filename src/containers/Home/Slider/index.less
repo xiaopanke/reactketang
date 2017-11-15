@@ -1,0 +1,20 @@
+.carousel-wrapper{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .dots{ position: absolute;bottom: 10px;
+    /*left:50%;
+    transform: translateX(-50%);*/
+    span{
+      float: left;
+      width:10px;
+      height: 10px;
+      background: #fff;
+      border-radius: 50%;
+      margin:5px;
+      &.active{
+        background: red;
+      }
+    }
+  }
+}
