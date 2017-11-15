@@ -34,9 +34,7 @@ app.get('/lessons',(req,res) => {
     let {offset=0,limit=5}=req.query; //前面是设置默认值
     for (var i = 0; i < cloneLessons.list.length; i++) {
       let lesson=cloneLessons.list[i];
-      console.log(lesson.title);
       lesson.title=`${offset/1+i+1}-${lesson.title}`
-      console.log(lesson.title);
     }
     res.send(cloneLessons)
 })

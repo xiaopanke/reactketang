@@ -24,13 +24,16 @@ export default{
   //获取后台数据
   getLessons(){
     return (dispatch,getState)=>{
-      dispatch({
-        type:types.FETCH_LESSONS
-      })
-      dispatch({
-       type:types.FETCH_LESSONS_FINISH,
-       payload:fetchLessons()
-     });
+      let {loading,hasMore,offset,limit}=getState().home.lessons;
+      if(!loading && hasMore){
+        dispatch({
+          type:types.FETCH_LESSONS
+        })
+        dispatch({
+         type:types.FETCH_LESSONS_FINISH,
+         payload:fetchLessons(offset,limit)
+       });
+      }
     }
   }
 }

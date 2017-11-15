@@ -7,7 +7,9 @@ let initState={
   lessons:{
     loading:'',//加载状态  加载中
     hasMore:true,//后面是否有更多
-    list:[]
+    list:[],
+    offset:0,
+    limit:5
   }
 }
 export default function (state=initState,action) {
@@ -37,7 +39,9 @@ export default function (state=initState,action) {
           ...state.lessons,
           loading:'',
           hasMore:action.payload.hasMore,//后面是否有更多
-          list:[...state.lessons.list,...action.payload.list]
+          list:[...state.lessons.list,...action.payload.list],
+          offset:state.lessons.offset+action.payload.list.length,
+          limit:action.payload.offset
         }
       }
     default:

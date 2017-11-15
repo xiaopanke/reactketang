@@ -3,6 +3,6 @@ export function fetchSliders(){
   return get('/sliders')
 }
 
-export function fetchLessons() {
-  return get('/lessons')
+export function fetchLessons(offset,limit) {
+  return get(`/lessons?offset=${offset}&limit=${limit}`)
 }
