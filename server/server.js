@@ -36,6 +36,9 @@ app.get('/lessons',(req,res) => {
       let lesson=cloneLessons.list[i];
       lesson.title=`${offset/1+i+1}-${lesson.title}`
     }
+    if(offset==10){
+      cloneLessons.hasMore=false
+    }
     res.send(cloneLessons)
 })
 app.listen(3000)

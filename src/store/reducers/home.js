@@ -40,8 +40,7 @@ export default function (state=initState,action) {
           loading:'',
           hasMore:action.payload.hasMore,//后面是否有更多
           list:[...state.lessons.list,...action.payload.list],
-          offset:state.lessons.offset+action.payload.list.length,
-          limit:action.payload.offset
+          offset:state.lessons.offset+action.payload.list.length
         }
       }
     default:
