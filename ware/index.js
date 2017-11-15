@@ -1,1 +1,1 @@
-import './2.logger.js'
+import './4.promise.js'
