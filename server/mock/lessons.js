@@ -1,0 +1,35 @@
+module.exports = {
+    hasMore:true,
+    list:[
+        {
+            url:'http://b.hiphotos.baidu.com/image/pic/item/d1160924ab18972b5d027826eccd7b899e510a25.jpg',
+            title:'Vue.js从理论精讲到项目实战课程',
+            id:111,
+            price:'￥5000.00元'
+        },
+        {
+            url:'http://a.hiphotos.baidu.com/image/pic/item/f11f3a292df5e0fe29a562d3566034a85fdf72a7.jpg',
+            title:'Vue.js从理论精讲到项目实战课程',
+            id:222,
+            price:'￥5000.00元'
+        },
+        {
+            url:'http://g.hiphotos.baidu.com/image/pic/item/3b292df5e0fe9925e2ca6dbd3ea85edf8cb1711c.jpg',
+            title:'Vue.js从理论精讲到项目实战课程',
+            id:333,
+            price:'￥5000.00元'
+        },
+        {
+            url:'http://c.hiphotos.baidu.com/image/pic/item/3801213fb80e7bec76a5650a252eb9389a506bd9.jpg',
+            title:'Vue.js从理论精讲到项目实战课程',
+            id:444,
+            price:'￥5000.00元'
+        },
+        {
+            url:'http://b.hiphotos.baidu.com/image/pic/item/e824b899a9014c08efdb8e42007b02087af4f471.jpg',
+            title:'Vue.js从理论精讲到项目实战课程',
+            id:555,
+            price:'￥5000.00元'
+        }
+    ]
+}

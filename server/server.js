@@ -19,7 +19,13 @@ app.use((req,res,next) => {
   }
 })
 let sliders=require('./mock/slider.js')
+//获取轮播图
 app.get('/sliders',(req,res) => {
     res.send(sliders)
+})
+let lessons=require('./mock/lessons.js')
+//获取美女
+app.get('/lessons',(req,res) => {
+    res.send(lessons)
 })
 app.listen(3000)

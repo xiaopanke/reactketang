@@ -13,7 +13,7 @@ export function get(url) {
       "credential":"include"
     }
   }).then((res) =>{
-    console.log(23456);
+    console.log(res);
     return res.json()
   })
 }

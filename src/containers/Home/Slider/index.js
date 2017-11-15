@@ -15,13 +15,11 @@ export default class Carousel extends React.Component {
           auto: 1000,
           continuous:true,
           callback:(index)=>{
-            console.log(1234567);
               this.setState({
                 shownum:index
               })
           }
         }
-        console.log(this.props);
         return (
             <div className="carousel-wrapper">
               {
