@@ -133,3 +133,9 @@ https://reactcommunity.org/react-transition-group/
 
 ## 轮播图
 https://github.com/voronianski/react-swipe
+
+
+## 中间件
+```
+npm install redux-logger redux-thunk redux-promise -S
+```
