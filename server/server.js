@@ -24,8 +24,20 @@ app.get('/sliders',(req,res) => {
     res.send(sliders)
 })
 let lessons=require('./mock/lessons.js')
-//获取美女
+//获取美女 //此接口可以再接收二个参数 offset（偏移量） limit (每页的条数)
+// http://localhost:3000/lessons?offset=0&limit=5;
+// http://localhost:3000/lessons?offset=5&limit=5;
+// http://localhost:3000/lessons?offset=10&limit=5;
 app.get('/lessons',(req,res) => {
-    res.send(lessons)
+    let cloneLessons=JSON.parse(JSON.stringify(lessons));//深度克隆
+    //取得查询字符串对象参数
+    let {offset=0,limit=5}=req.query; //前面是设置默认值
+    for (var i = 0; i < cloneLessons.list.length; i++) {
+      let lesson=cloneLessons.list[i];
+      console.log(lesson.title);
+      lesson.title=`${offset/1+i+1}-${lesson.title}`
+      console.log(lesson.title);
+    }
+    res.send(cloneLessons)
 })
 app.listen(3000)
