@@ -7,13 +7,19 @@ export default class Carousel extends React.Component {
         let swipeoption={
           auto: 3000
         }
+        console.log(this.props);
         return (
             <div className="carousel-wrapper">
-              <ReactSwipe className="carousel" swipeOptions={swipeoption}>
-                  <div>panda 1</div>
-                  <div>panda 2</div>
-                  <div>panda 3</div>
-              </ReactSwipe>
+              {
+                this.props.sliders.length >0 ? <ReactSwipe className="carousel" swipeOptions={swipeoption}>
+                    {
+                      this.props.sliders.map((item,index) => (
+                        <div key={index}><img src={item} /></div>
+                      ))
+                    }
+                </ReactSwipe> : null
+              }
+
             </div>
         );
     }
