@@ -41,6 +41,6 @@ app.get('/lessons',(req,res) => {
     }
     setTimeout(function() {
       res.send(cloneLessons)
-    },1000)
+    },100)
 })
 app.listen(3000)
