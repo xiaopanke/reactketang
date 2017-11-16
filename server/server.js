@@ -50,7 +50,7 @@ app.get('/lessons',(req,res) => {
     }
     setTimeout(function() {
       res.send(cloneLessons)
-    },100)
+    },1000)
 })
 //注册接口
 app.post('/signup',(req,res) => {

@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import './index.less';
+import Loading from "../../../components/Loading/index";
 export default class Lessons extends Component{
 
   render(){
@@ -18,12 +19,19 @@ export default class Lessons extends Component{
             </div>
           ))
         }
-        <div onClick={this.props.getLessons} className="load-status">
+        {/* <div onClick={this.props.getLessons} className="load-status">
           {
             this.props.lessons.loading ? '加载中' :
             this.props.lessons.hasMore ? '加载更多' : '我是有底线的'
           }
-        </div>
+        </div> */}
+        {
+          this.props.lessons.loading ?
+            <Loading/> : this.props.lessons.hasMore ? null : <div
+            className="load-status">
+            我是有底线的
+          </div>
+        }
       </div>
     )
   }
