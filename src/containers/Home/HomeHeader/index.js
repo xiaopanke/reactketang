@@ -15,10 +15,10 @@ export default class HomeHeader extends Component{
         this.props.setLesson(event.target.dataset.id);
         this.setState({isShow:false})
       }}>
-        <li className={this.props.lesson=='1' ? 'active' : ''} data-id="1">node课程培训</li>
-        <li  className={this.props.lesson=='2' ? 'active' : ''} data-id="2">html课程培训</li>
-        <li  className={this.props.lesson=='3' ? 'active' : ''} data-id="3">视频课程培训</li>
-        <li  className={this.props.lesson=='4' ? 'active' : ''} data-id="4">node课程培训</li>
+        <li className={this.props.lesson=='1' ? 'active' : ''} data-id="1">大美女</li>
+        <li  className={this.props.lesson=='2' ? 'active' : ''} data-id="2">小美女</li>
+        <li  className={this.props.lesson=='3' ? 'active' : ''} data-id="3">大大美女</li>
+        <li  className={this.props.lesson=='4' ? 'active' : ''} data-id="4">大小美女</li>
       </ul>
       </CSSTransition>
   )

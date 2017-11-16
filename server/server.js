@@ -39,6 +39,8 @@ app.get('/lessons',(req,res) => {
     if(offset==10){
       cloneLessons.hasMore=false
     }
-    res.send(cloneLessons)
+    setTimeout(function() {
+      res.send(cloneLessons)
+    },1000)
 })
 app.listen(3000)
