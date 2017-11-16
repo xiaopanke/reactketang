@@ -6,6 +6,9 @@ module.exports={
     path:path.resolve('build'),//输出的目录
     filename:'build.js'//输出的文件
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   module:{//配置模块
     rules:[
       {

@@ -6,14 +6,24 @@ export function get(url) {
   //浏览器原生支持fetch
   return  fetch(domain+url,{
     method:'GET',
+    "credentials":"include" , //客户跨域请求服务器的要携带cookie
     header:{
       //需要服务器返回json格式的数据
-      "Accept":'application/json',
-      //客户跨域请求服务器的要携带cookie
-      "credential":"include"
+      "Accept":'application/json'
     }
   }).then((res) =>{
     console.log(res);
     return res.json()
   })
+}
+//向服务器发送post请求
+export function post(url,data) {
+  return fetch(domain+url,{
+    method:'POST',
+    "credentials":"include",
+    header:{
+      "Accept":'application/json',//用来指定客户端能够接收的响应体类型
+      "Content-Type":'application/json' //内容类型
+    }
+  }).then(res=>res.json())
 }
