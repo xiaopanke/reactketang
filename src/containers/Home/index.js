@@ -13,6 +13,8 @@ class Home extends Component{
     this.props.getLessons();
     //上拉加载更多
     upMore(this.refs.content,this.props.getLessons)
+    //下拉刷新
+    downRefresh(this.refs.content,this.props.refresh)
   }
   render(){
     return (

@@ -43,6 +43,17 @@ export default function (state=initState,action) {
           offset:state.lessons.offset+action.payload.list.length
         }
       }
+    case types.FETCH_LESSONS_REFRESH:
+      return {
+        ...state,
+        lessons:{
+          ...state.lessons,
+          loading:'',
+          hasMore:action.payload.hasMore,//后面是否有更多
+          list:action.payload.list, //列表
+          offset:action.payload.list.length
+        }
+      }
     default:
     return state
   }

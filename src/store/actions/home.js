@@ -35,5 +35,20 @@ export default{
        });
       }
     }
+  },
+  refresh(){
+    return (dispatch,getState)=>{
+      let {loading,hasMore,offset,limit}=getState().home.lessons;
+      if(!loading){
+        dispatch({
+          type:types.FETCH_LESSONS
+        })
+        dispatch({
+         type:types.FETCH_LESSONS_REFRESH,
+         //payload:fetchLessons(0,offset+limit)
+         payload:fetchLessons(0,limit)
+       });
+      }
+    }
   }
 }
