@@ -23,6 +23,10 @@ export default function (state=initState,action) {
         error,
         user
       }
+    case types.VALIDATE:
+      var {code,user}=action.payload;
+      console.log({code,user});
+      return code==0 ? {...state,user} : state
     default:
     return state
   }

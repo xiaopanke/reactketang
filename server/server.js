@@ -69,10 +69,21 @@ app.post('/login',(req,res) => {
   let user=req.body;
   let oldUser=users.find((item) =>item.username==user.username&& item.password==user.password)
   if(oldUser){//此用户名已经被人占用
-    res.json({code:0,success:'恭喜你登陆成功'})
     req.session.user=user; //登陆成功的对象写入session
+    res.json({code:0,success:'恭喜你登陆成功',user})
   }else{
     res.json({code:1,error:'用户名或者密码错误'})
   }
 })
+
+//当应用初始化的时候，会向后台发送一个请求，询问当前用户是否登录，如果登录则返回登录用户并存放在仓库里
+app.get('/validate',(req,res) => {
+  if(req.session.user){
+    res.json({code:0,user:req.session.user})
+  }else{
+    res.json({code:1})
+  }
+})
+
+
 app.listen(3000)

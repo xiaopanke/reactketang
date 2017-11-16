@@ -1,5 +1,5 @@
 import * as types from '../action-types';
-import {signUp,login} from '../../api/session';
+import {signUp,login,validate} from '../../api/session';
 import {push} from 'react-router-redux'
 export default{
   signUp(data){
@@ -27,6 +27,16 @@ export default{
         if(code==0){
           dispatch(push('/profile'))
         }
+      })
+    }
+  },
+  validate(){
+    return dispatch=>{
+      validate().then((payload) => {
+        dispatch({
+          type:types.VALIDATE,
+          payload
+        })
       })
     }
   }

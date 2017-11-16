@@ -6,3 +6,4 @@ export const FETCH_LESSONS_FINISH='FETCH_LESSONS_FINISH' //获取课程列表结
 export const FETCH_LESSONS_REFRESH='FETCH_LESSONS_REFRESH' //刷新课程列表
 export const SIGN_UP='SIGN_UP' //注册
 export const LOGIN='LOGIN' //登陆
+export const VALIDATE='VALIDATE' //验证是否登陆
