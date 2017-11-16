@@ -43,4 +43,8 @@ app.get('/lessons',(req,res) => {
       res.send(cloneLessons)
     },100)
 })
+//注册接口
+app.get('/signup',(req,res) => {
+
+})
 app.listen(3000)

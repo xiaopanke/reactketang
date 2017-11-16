@@ -14,7 +14,7 @@ export default class Signup extends Component{
           <input type="text" placeholder="密码" />
           <input type="text" placeholder="密码" />
           <Link to='/login'>登陆</Link>
-          <div className="loginbutton">注册</div>
+          <div className="loginbutton">注&nbsp;册</div>
       </div>
     )
   }
