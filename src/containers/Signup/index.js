@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import './index.less'
 import {Link} from 'react-router-dom'
 import NavBar from '../../components/NavBar/index'
+import Message from '../../components/Message/index'
 import {connect} from 'react-redux';
 import actions from '../../store/actions/session';
 class Signup extends Component{
@@ -24,12 +25,7 @@ class Signup extends Component{
           <input ref={input=>this.password=input} type="text" placeholder="密码" />
           <Link to='/login'>登陆</Link>
           <div className="loginbutton" onClick={this.signUp}>注&nbsp;册</div>
-          {
-            this.props.error&& <div className="error-info">{this.props.error}</div>
-          }
-          {
-            this.props.success&& <div className="success-info">{this.props.success}</div>
-          }
+          <Message {...this.props}  />
 
       </div>
     )

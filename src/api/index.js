@@ -7,7 +7,7 @@ export function get(url) {
   return  fetch(domain+url,{
     method:'GET',
     "credentials":"include" , //客户跨域请求服务器的要携带cookie
-    header:{
+    headers:{
       //需要服务器返回json格式的数据
       "Accept":'application/json'
     }
@@ -21,9 +21,10 @@ export function post(url,data) {
   return fetch(domain+url,{
     method:'POST',
     "credentials":"include",
-    header:{
+    headers:{
       "Accept":'application/json',//用来指定客户端能够接收的响应体类型
       "Content-Type":'application/json' //内容类型
-    }
+    },
+    body:JSON.stringify(data)
   }).then(res=>res.json())
 }

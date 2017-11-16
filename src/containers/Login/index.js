@@ -2,7 +2,17 @@ import React,{Component} from 'react';
 import './index.less'
 import {Link} from 'react-router-dom'
 import NavBar from '../../components/NavBar/index'
-export default class Login extends Component{
+import Message from '../../components/Message/index'
+import {connect} from 'react-redux';
+import actions from '../../store/actions/session';
+class Login extends Component{
+  login=() => {
+    let username=this.username.value;
+    let password=this.password.value;
+    if(username && password){
+      this.props.login({username,password})
+    }
+  }
   render(){
     return (
       <div className="login">
@@ -10,11 +20,16 @@ export default class Login extends Component{
           <div className="login-logo">
               <img src={require('../../images/profile.png')} />
           </div>
-          <input type="text" placeholder="手机号" />
-          <input type="text" placeholder="密码" />
+          <input ref={input=>this.username=input} type="text" placeholder="用户名" />
+          <input ref={input=>this.password=input} type="text" placeholder="密码" />
           <Link to='/signup'>注册</Link>
-          <div className="loginbutton">登&nbsp;陆</div>
+          <div className="loginbutton"  onClick={this.login}>登&nbsp;陆</div>
+          <Message {...this.props} />
       </div>
     )
   }
 }
+export default connect(
+  state=>state.session,
+  actions
+)(Login)
