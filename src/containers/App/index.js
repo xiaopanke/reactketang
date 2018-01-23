@@ -30,6 +30,7 @@ export default class App extends Component{
           <Route path="/profile" component={Profile} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          {/* <Route path="/signup" component={Signup} /> */}
         </div>
       </ConnectedRouter>
     )
